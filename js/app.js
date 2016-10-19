@@ -22,6 +22,12 @@ var ViewModel = function() {
       return "F";
     }
   }, this);
+
+  this.nicknames = ko.observableArray([
+    {nickname: 'Apple'},
+    {nickname: 'Banana'},
+    {nickname: 'Orange'}
+  ]);
 }
 
 ko.applyBindings(new ViewModel());
