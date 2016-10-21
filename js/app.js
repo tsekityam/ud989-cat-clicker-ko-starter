@@ -73,14 +73,13 @@ var Model = function(data) {
 }
 var ViewModel = function() {
   var self = this;
-  
+
   this.cats = ko.observableArray([]);
   catData.forEach(function(cat) {
-    self.cats().push(new Model(catData[0]));
+    self.cats().push(new Model(cat));
   });
 
   this.currentCat = ko.observable(self.cats()[0]);
-
   this.incrementCounter = function() {
     self.currentCat().clickCount(self.currentCat().clickCount() + 1);
   };
