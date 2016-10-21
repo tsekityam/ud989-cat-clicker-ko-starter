@@ -78,6 +78,10 @@ var ViewModel = function() {
   catData.forEach(function(cat) {
     self.cats().push(new Model(cat));
   });
+  this.clickCat = function() {
+    var cat = self.cats()[catData.indexOf(this)];
+    self.currentCat(cat);
+  };
 
   this.currentCat = ko.observable(self.cats()[0]);
   this.incrementCounter = function() {
